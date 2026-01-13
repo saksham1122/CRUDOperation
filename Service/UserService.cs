@@ -3,7 +3,7 @@ using CRUDOperation.Model;
 
 namespace CRUDOperation.Service
 {
-    public class UserService
+    public class UserService 
     {
         private readonly IMongoCollection<User> _users;
 
@@ -12,6 +12,7 @@ namespace CRUDOperation.Service
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
             _users = database.GetCollection<User>(settings.CollectionName);
+
         }
 
         public List<User> Get() =>
